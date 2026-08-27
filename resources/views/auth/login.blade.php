@@ -1,0 +1,4 @@
+@extends('layouts.app')
+@section('content')
+<div class="container py-5"><div class="row justify-content-center"><div class="col-md-5"><div class="card p-4 p-md-5"><h2>Welcome back</h2><p class="text-muted">Sign in to your Peaceful-home account.</p><form method="POST" action="{{ route('login.store') }}">@csrf<div class="mb-3"><label>Email</label><input class="form-control" name="email" type="email" required value="{{ old('email') }}"></div><div class="mb-3"><label>Password</label><input class="form-control" name="password" type="password" required></div><div class="form-check mb-3"><input class="form-check-input" name="remember" type="checkbox"><label class="form-check-label">Remember me</label></div><button class="btn btn-green w-100">Sign in</button></form><hr><p class="small text-muted mb-0">New patient? <a href="{{ route('register') }}">Create an account</a></p></div></div></div></div>
+@endsection

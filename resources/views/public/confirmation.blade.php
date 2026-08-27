@@ -1,0 +1,4 @@
+@extends('layouts.app')
+@section('content')
+<div class="container py-5"><div class="row justify-content-center"><div class="col-lg-7"><div class="card p-5 text-center"><div class="display-5 text-green"><i class="bi bi-check-circle"></i></div><h1 class="mt-3">Reservation received</h1><p class="text-muted">Your reference is</p><h3>{{ $booking->booking_number }}</h3><hr><p><strong>{{ $booking->service->name }}</strong><br>{{ $booking->booking_date->format('d M Y') }} at {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p><p>Amount: <strong>ZMW {{ number_format($booking->amount,2) }}</strong></p><span class="badge bg-warning text-dark">Payment: {{ $booking->payment_status }}</span><div class="mt-4"><a class="btn btn-green" href="{{ route('home') }}">Return home</a></div></div></div></div></div>
+@endsection
