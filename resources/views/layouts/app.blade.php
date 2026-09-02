@@ -23,7 +23,7 @@
 <body>
 <nav class="navbar navbar-dark px-3 py-2">
     <a class="navbar-brand brand d-flex align-items-center gap-2" href="{{ route('home') }}">
-        <span class="brand-mark"><i class="bi bi-heart-pulse"></i></span> Peaceful-Home
+        <span class="brand-mark"><i class="bi bi-heart-pulse"></i></span> Peaceful Home
     </a>
     <div class="d-flex align-items-center gap-2">
         @auth

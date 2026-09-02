@@ -97,15 +97,15 @@ http://127.0.0.1:8000
 
 ### Administrator
 Email: admin@rehabcare.test
-Password: test@1234
+Password: password
 
 ### Reception
 Email: reception@rehabcare.test
-Password: test@1234
+Password: password
 
 ### Clinical
 Email: clinical@rehabcare.test
-Password: test@1234
+Password: password
 
 ### Patient
 Create a patient account using the public registration page.

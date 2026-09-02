@@ -5,13 +5,27 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PortalController;
+use App\Http\Controllers\PaymentController;
 
 Route::get('/', [PublicController::class,'home'])->name('home');
 Route::get('/services', [PublicController::class,'services'])->name('services');
 Route::get('/services/{service}', [PublicController::class,'showService'])->name('services.show');
+Route::get('/programmes', [PublicController::class,'programmes'])->name('programmes');
+Route::get('/about-us', fn() => app(PublicController::class)->page('about'))->name('about');
+Route::get('/what-to-expect', fn() => app(PublicController::class)->page('expect'))->name('expect');
+Route::get('/admissions', fn() => app(PublicController::class)->page('admissions'))->name('admissions');
+Route::get('/faqs', fn() => app(PublicController::class)->page('faqs'))->name('faqs');
+Route::get('/contact-us', fn() => app(PublicController::class)->page('contact'))->name('contact');
+Route::post('/contact-us', [PublicController::class,'contact'])->name('contact.store');
+Route::get('/privacy-policy', fn() => app(PublicController::class)->page('privacy'))->name('privacy');
+Route::get('/terms-and-conditions', fn() => app(PublicController::class)->page('terms'))->name('terms');
+Route::get('/payment-policy', fn() => app(PublicController::class)->page('payment-policy'))->name('payment-policy');
 Route::get('/book', [PublicController::class,'booking'])->name('booking');
 Route::post('/book', [PublicController::class,'storeBooking'])->name('booking.store');
 Route::get('/booking/{booking}/confirmation', [PublicController::class,'confirmation'])->name('booking.confirmation');
+Route::get('/booking/{booking}/payment', [PaymentController::class,'show'])->name('payments.show');
+Route::post('/booking/{booking}/payment', [PaymentController::class,'store'])->name('payments.store');
+Route::get('/booking/{booking}/payment/{payment}', [PaymentController::class,'status'])->name('payments.status');
 
 Route::get('/login',[AuthController::class,'showLogin'])->name('login');
 Route::post('/login',[AuthController::class,'login'])->name('login.store');
